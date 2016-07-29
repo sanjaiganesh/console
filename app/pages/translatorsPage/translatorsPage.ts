@@ -9,7 +9,7 @@ import {doAlert} from "../../model/utils";
     templateUrl: "build/pages/translatorsPage/translatorsPage.html",
 })
 export class TranslatorsPage implements OnInit {
-    translators: string[];
+    translators: string[] = ['Thermostats'];
 
     // ctor
     constructor(

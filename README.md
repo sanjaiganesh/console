@@ -89,7 +89,7 @@ Finally, run the following to install and run on a local Windows simulator (note
 
 ```bash
 $ gulp build
-$ ionic run windows --archs=x64
+$ $ ionic run windows --archs=x64
 ```
 
 ? Note: At this time the --livereload option is not working on Windows.

@@ -5,6 +5,7 @@ import {SearchDataService} from "../../providers/searchDataService";
 import {BluetoothOnboardingPage} from "../onboarding/bluetoothOnboardingPage/bluetoothOnboardingPage";
 import {ZWaveOnboardingPage} from "../onboarding/zwaveOnboardingPage/zwaveOnboardingPage";
 import {WinkOnboardingPage} from "../onboarding/winkOnboardingPage/winkOnboardingPage";
+import {NestOnboardingPage} from "../onboarding/nestOnboardingPage/nestOnboardingPage";
 import {ManualOnboardingPage} from "../onboarding/manualOnboardingPage/manualOnboardingPage";
 import {doAlert} from "../../model/utils";
 
@@ -71,6 +72,12 @@ export class AddTranslatorPage implements OnInit {
                             console.log('id key value: ' + idKeyValue);
 
                             this.nav.push(WinkOnboardingPage, { files: files, idKeyFilter: idKeyValue });
+                        } 
+                        else if (files.onboarding.endsWith("Nest.xml")) {
+                            var idKeyValue = this.getOnboardingValue(manifestContent, "idKeyFilter");
+                            console.log('id key value: ' + idKeyValue);
+
+                            this.nav.push(NestOnboardingPage, { files: files, idKeyFilter: idKeyValue });
                         } else if (files.onboarding.endsWith("Manual.xml")) {
                             
                             var deviceName = this.getOnboardingValue(manifestContent, "name");
